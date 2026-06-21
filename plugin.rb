@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-# name: discourse-chat-integration
-# about: Allows integration with several external chat system providers
-# meta_topic_id: 66522
-# version: 0.1
-# url: https://github.com/discourse/discourse-chat-integration
-# author: David Taylor
+# name: kakao-discourse-chat-integration
+# about: Allows integration with only Kakao
+# meta_topic_id: NaN
+# version: NaN
+# url: https://github.com/AirflowKorea/kakao-discourse-chat-integration
+# author: Apache Airflow Korea User Group
 
 enabled_site_setting :chat_integration_enabled
 
@@ -133,9 +133,9 @@ after_initialize do
           provider.trigger_notification(post, channel, nil)
         rescue StandardError => e
           Rails.logger.warn "[discourse-automation] Error while sending chat integration message. Automation ID: #{automation.id}"
-          Rails.logger.warn "[discourse-chat-integration] Error: #{e.inspect}"
-          Rails.logger.warn "[discourse-chat-integration] Channel: #{channel_name}"
-          Rails.logger.warn "[discourse-chat-integration] Reference post: #{post.inspect}"
+          Rails.logger.warn "[kakao-discourse-chat-integration] Error: #{e.inspect}"
+          Rails.logger.warn "[kakao-discourse-chat-integration] Channel: #{channel_name}"
+          Rails.logger.warn "[kakao-discourse-chat-integration] Reference post: #{post.inspect}"
         end
       end
     end
